@@ -1,0 +1,42 @@
+{
+  "model": "TriMo-Gate",
+  "manuscript_location": "SI Section 5 / Table S6, referenced by Sections 3.2 and 4.1",
+  "split_seeds": [
+    42,
+    2025,
+    3407
+  ],
+  "training_seed": 42,
+  "rdkit_split_version": "2026.03.3",
+  "qm9": {
+    "cohort": 130831,
+    "official_excluded": 3054,
+    "counts": {
+      "train": 104664,
+      "val": 13083,
+      "test": 13084
+    },
+    "murcko_groups": 15661,
+    "allocation_groups_after_identity_union": 15637,
+    "empty_scaffold_train_only": 13390,
+    "unparseable_relaxed_identity_records_retained": 612
+  },
+  "qm8": {
+    "cohort": 21747,
+    "counts": {
+      "train": 17397,
+      "val": 2174,
+      "test": 2176
+    },
+    "murcko_groups": 2932,
+    "empty_scaffold_train_only": 3620
+  },
+  "hpo": false,
+  "precision": "FP32",
+  "batch_size": 128,
+  "max_epochs": 200,
+  "early_stop_patience": 20,
+  "selection": "Earliest strict minimum raw validation MAE; test only after training and selection are fixed",
+  "statistic": "Mean and sample SD (ddof=1) across three scaffold partitions",
+  "final_evaluations_verified": 60
+}

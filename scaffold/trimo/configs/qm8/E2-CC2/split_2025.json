@@ -1,0 +1,40 @@
+{
+  "mode": "official_candidate",
+  "dataset": "qm8",
+  "target": "E2-CC2",
+  "unit": "hartree",
+  "seed": 42,
+  "max_epochs": 200,
+  "batch_size": 128,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0001,
+  "grad_clip": 0.5,
+  "torch_num_threads": 4,
+  "precision": "float32",
+  "cmcr": false,
+  "loss": "normalized_l1",
+  "scheduler": {
+    "name": "ReduceLROnPlateau",
+    "factor": 0.5,
+    "patience": 10,
+    "threshold": 0.0,
+    "min_lr": 1e-06
+  },
+  "architecture": {
+    "d_smiles": 256,
+    "smiles_num_heads": 8,
+    "smiles_num_layers": 6,
+    "cnn_kernels": 256,
+    "d_hidden": 256,
+    "graph_num_layers": 6,
+    "d_point_cloud": 1024,
+    "d_point_output": 256,
+    "d_output": 1,
+    "use_smiles": true,
+    "use_graph": true,
+    "use_point_cloud": true,
+    "dropout": 0.1,
+    "fusion_type": "gate"
+  },
+  "early_stop_patience": 20
+}

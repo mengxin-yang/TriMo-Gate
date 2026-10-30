@@ -1,0 +1,476 @@
+{
+  "date": "2026-10-30",
+  "original_plan_sha256": "446efd0e02df38191ee28662db53d1dffd688f0fa9950bc819ac7e33c223f58b",
+  "published_plan_sha256": "e842a7640b6f3b62c11502fdc84e4c1e4c5e4618e1ee699144f99c0caeb0e50a",
+  "adaptation": "Two private source paths replaced with relative source names. Only their frozen metadata hash, evaluator expected metadata hash, provenance record and plan provenance hash were updated. Model, data loader, training/checkpoint code, protocol bindings, all configs and molecule partitions are byte-identical. Historical results keep their original plan/evaluator hashes.",
+  "files": [
+    {
+      "path": "trimo/evaluate.py",
+      "original_sha256": "67797c349ff04bd67ad4d4c5937cb254f43e64a6ef6c2ca4736c7ecd121d5d62",
+      "published_sha256": "aad6b5ceedf86fce5ac580bad774846e0b62e6f15eb2cd1ad15192a72166131f",
+      "byte_identical": false
+    },
+    {
+      "path": "trimo/preflight_inputs.py",
+      "original_sha256": "fa05c51c7286d0bb9a0b8de629916831e560d89d8a1d2632a1c29ffdd5c8d7ff",
+      "published_sha256": "fa05c51c7286d0bb9a0b8de629916831e560d89d8a1d2632a1c29ffdd5c8d7ff",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/plan.json",
+      "original_sha256": "446efd0e02df38191ee28662db53d1dffd688f0fa9950bc819ac7e33c223f58b",
+      "published_sha256": "e842a7640b6f3b62c11502fdc84e4c1e4c5e4618e1ee699144f99c0caeb0e50a",
+      "byte_identical": false
+    },
+    {
+      "path": "trimo/provenance.json",
+      "original_sha256": "ebd86a775870204c1de6f01ac381b463ecdea608b7227c95ee561d58f4a3e3f2",
+      "published_sha256": "9bde6297fb209ccd9edea943a62a8793fd7dcc513e1c34492f450749ab6d4372",
+      "byte_identical": false
+    },
+    {
+      "path": "trimo/configs/qm9/dipole_moment/split_42.json",
+      "original_sha256": "496f41f08ce17ecd9d024333b762fd9044b0b0c18d10f74d5a8f75815f8a7bde",
+      "published_sha256": "496f41f08ce17ecd9d024333b762fd9044b0b0c18d10f74d5a8f75815f8a7bde",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-CC2/split_42.json",
+      "original_sha256": "220abd0fee65549018664c634fdf17fd87f1a1836d70786cce212678d796e226",
+      "published_sha256": "220abd0fee65549018664c634fdf17fd87f1a1836d70786cce212678d796e226",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/isotropic_polarizability/split_42.json",
+      "original_sha256": "a6f74f01a975a1b91e60c2b928341f7c8ed82505b7e806abb66b28cf28e46415",
+      "published_sha256": "a6f74f01a975a1b91e60c2b928341f7c8ed82505b7e806abb66b28cf28e46415",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-CC2/split_42.json",
+      "original_sha256": "d24cfac129f7b3796561570d90cb517e83084a1b71293838d5db802e8b1829ca",
+      "published_sha256": "d24cfac129f7b3796561570d90cb517e83084a1b71293838d5db802e8b1829ca",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/energy_HOMO/split_42.json",
+      "original_sha256": "9c9a42c73727ac522c33405fec96882f02f3b477b122e91897f2899f876248fd",
+      "published_sha256": "9c9a42c73727ac522c33405fec96882f02f3b477b122e91897f2899f876248fd",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-CC2/split_42.json",
+      "original_sha256": "cbd8a74620bf3d8a9358c2c872d34c151036c731aea5b2faed1f466ff5d50b1d",
+      "published_sha256": "cbd8a74620bf3d8a9358c2c872d34c151036c731aea5b2faed1f466ff5d50b1d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/gap/split_42.json",
+      "original_sha256": "511407be48c263b8284bcfa2d4f79db6d8162da35c57169fa3dc7254fcaa437e",
+      "published_sha256": "511407be48c263b8284bcfa2d4f79db6d8162da35c57169fa3dc7254fcaa437e",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-CC2/split_42.json",
+      "original_sha256": "43a73e90bf18bcb98bdbddb1a01b8d22198006c27e6188044ce6bcdb6238a3d4",
+      "published_sha256": "43a73e90bf18bcb98bdbddb1a01b8d22198006c27e6188044ce6bcdb6238a3d4",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/electronic_spatial_extent/split_42.json",
+      "original_sha256": "962866c0679ba4079dc449175487239edaa2421d87a96a7d233cbc2a72d20a13",
+      "published_sha256": "962866c0679ba4079dc449175487239edaa2421d87a96a7d233cbc2a72d20a13",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-PBE0/split_42.json",
+      "original_sha256": "3f8b551cdcc60fe79c08a91fe80df396dd7d4e23d3afce538e637d69a94734e8",
+      "published_sha256": "3f8b551cdcc60fe79c08a91fe80df396dd7d4e23d3afce538e637d69a94734e8",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/zero_point_vibrational_energy/split_42.json",
+      "original_sha256": "d46da6a56697c5ec31fb8971a758ecd56352e205ac9b5b87e9767304f540ea66",
+      "published_sha256": "d46da6a56697c5ec31fb8971a758ecd56352e205ac9b5b87e9767304f540ea66",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-PBE0/split_42.json",
+      "original_sha256": "d0af8f794ce1819fd10dfdf9f45f3375662a248b3897e4f51d38321d9c1b8c03",
+      "published_sha256": "d0af8f794ce1819fd10dfdf9f45f3375662a248b3897e4f51d38321d9c1b8c03",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/internal_energy_0K_atom_kcal_mol/split_42.json",
+      "original_sha256": "fe7449fe41b345fa90fe3a171937e360c5c53836ed006de451b9db336043f48d",
+      "published_sha256": "fe7449fe41b345fa90fe3a171937e360c5c53836ed006de451b9db336043f48d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-PBE0/split_42.json",
+      "original_sha256": "8d85f3eeae79e6c3dcc2df1488eff6afddbe99b38dde1f4d466a9874ea62c3c6",
+      "published_sha256": "8d85f3eeae79e6c3dcc2df1488eff6afddbe99b38dde1f4d466a9874ea62c3c6",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/heat_capacity_298K/split_42.json",
+      "original_sha256": "209c16592dba3dd975067aea02edfa52bf2292ed51486ba61d2dbf4afa7ce30b",
+      "published_sha256": "209c16592dba3dd975067aea02edfa52bf2292ed51486ba61d2dbf4afa7ce30b",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-PBE0/split_42.json",
+      "original_sha256": "9be10f804b67b9edcb3be4819cef94e94d5f858524382132b0847968e02c60c7",
+      "published_sha256": "9be10f804b67b9edcb3be4819cef94e94d5f858524382132b0847968e02c60c7",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/dipole_moment/split_2025.json",
+      "original_sha256": "496f41f08ce17ecd9d024333b762fd9044b0b0c18d10f74d5a8f75815f8a7bde",
+      "published_sha256": "496f41f08ce17ecd9d024333b762fd9044b0b0c18d10f74d5a8f75815f8a7bde",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-CAM/split_42.json",
+      "original_sha256": "787bbaeb4ff7447ff1414e9380d27bc78153f5f070b91ba460358715f8be318e",
+      "published_sha256": "787bbaeb4ff7447ff1414e9380d27bc78153f5f070b91ba460358715f8be318e",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/isotropic_polarizability/split_2025.json",
+      "original_sha256": "a6f74f01a975a1b91e60c2b928341f7c8ed82505b7e806abb66b28cf28e46415",
+      "published_sha256": "a6f74f01a975a1b91e60c2b928341f7c8ed82505b7e806abb66b28cf28e46415",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-CAM/split_42.json",
+      "original_sha256": "de0bb8e6454bd1796dbffa6674ed21e6b765e2599c7343a7d8a83d29ee5bc052",
+      "published_sha256": "de0bb8e6454bd1796dbffa6674ed21e6b765e2599c7343a7d8a83d29ee5bc052",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/energy_HOMO/split_2025.json",
+      "original_sha256": "9c9a42c73727ac522c33405fec96882f02f3b477b122e91897f2899f876248fd",
+      "published_sha256": "9c9a42c73727ac522c33405fec96882f02f3b477b122e91897f2899f876248fd",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-CAM/split_42.json",
+      "original_sha256": "99a2a5f178df590fe6efdb6dbd5ce72c2ae0f1a6fea5d0c47ccc6164eba78fc5",
+      "published_sha256": "99a2a5f178df590fe6efdb6dbd5ce72c2ae0f1a6fea5d0c47ccc6164eba78fc5",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/gap/split_2025.json",
+      "original_sha256": "511407be48c263b8284bcfa2d4f79db6d8162da35c57169fa3dc7254fcaa437e",
+      "published_sha256": "511407be48c263b8284bcfa2d4f79db6d8162da35c57169fa3dc7254fcaa437e",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-CAM/split_42.json",
+      "original_sha256": "2485d560579733d59d68f33edb82c7e01823de204d409d2669f4b4f5d175d6bc",
+      "published_sha256": "2485d560579733d59d68f33edb82c7e01823de204d409d2669f4b4f5d175d6bc",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/electronic_spatial_extent/split_2025.json",
+      "original_sha256": "962866c0679ba4079dc449175487239edaa2421d87a96a7d233cbc2a72d20a13",
+      "published_sha256": "962866c0679ba4079dc449175487239edaa2421d87a96a7d233cbc2a72d20a13",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-CC2/split_2025.json",
+      "original_sha256": "220abd0fee65549018664c634fdf17fd87f1a1836d70786cce212678d796e226",
+      "published_sha256": "220abd0fee65549018664c634fdf17fd87f1a1836d70786cce212678d796e226",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/zero_point_vibrational_energy/split_2025.json",
+      "original_sha256": "d46da6a56697c5ec31fb8971a758ecd56352e205ac9b5b87e9767304f540ea66",
+      "published_sha256": "d46da6a56697c5ec31fb8971a758ecd56352e205ac9b5b87e9767304f540ea66",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-CC2/split_2025.json",
+      "original_sha256": "d24cfac129f7b3796561570d90cb517e83084a1b71293838d5db802e8b1829ca",
+      "published_sha256": "d24cfac129f7b3796561570d90cb517e83084a1b71293838d5db802e8b1829ca",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/internal_energy_0K_atom_kcal_mol/split_2025.json",
+      "original_sha256": "fe7449fe41b345fa90fe3a171937e360c5c53836ed006de451b9db336043f48d",
+      "published_sha256": "fe7449fe41b345fa90fe3a171937e360c5c53836ed006de451b9db336043f48d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-CC2/split_2025.json",
+      "original_sha256": "cbd8a74620bf3d8a9358c2c872d34c151036c731aea5b2faed1f466ff5d50b1d",
+      "published_sha256": "cbd8a74620bf3d8a9358c2c872d34c151036c731aea5b2faed1f466ff5d50b1d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/heat_capacity_298K/split_2025.json",
+      "original_sha256": "209c16592dba3dd975067aea02edfa52bf2292ed51486ba61d2dbf4afa7ce30b",
+      "published_sha256": "209c16592dba3dd975067aea02edfa52bf2292ed51486ba61d2dbf4afa7ce30b",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-CC2/split_2025.json",
+      "original_sha256": "43a73e90bf18bcb98bdbddb1a01b8d22198006c27e6188044ce6bcdb6238a3d4",
+      "published_sha256": "43a73e90bf18bcb98bdbddb1a01b8d22198006c27e6188044ce6bcdb6238a3d4",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/dipole_moment/split_3407.json",
+      "original_sha256": "496f41f08ce17ecd9d024333b762fd9044b0b0c18d10f74d5a8f75815f8a7bde",
+      "published_sha256": "496f41f08ce17ecd9d024333b762fd9044b0b0c18d10f74d5a8f75815f8a7bde",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-PBE0/split_2025.json",
+      "original_sha256": "3f8b551cdcc60fe79c08a91fe80df396dd7d4e23d3afce538e637d69a94734e8",
+      "published_sha256": "3f8b551cdcc60fe79c08a91fe80df396dd7d4e23d3afce538e637d69a94734e8",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/isotropic_polarizability/split_3407.json",
+      "original_sha256": "a6f74f01a975a1b91e60c2b928341f7c8ed82505b7e806abb66b28cf28e46415",
+      "published_sha256": "a6f74f01a975a1b91e60c2b928341f7c8ed82505b7e806abb66b28cf28e46415",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-PBE0/split_2025.json",
+      "original_sha256": "d0af8f794ce1819fd10dfdf9f45f3375662a248b3897e4f51d38321d9c1b8c03",
+      "published_sha256": "d0af8f794ce1819fd10dfdf9f45f3375662a248b3897e4f51d38321d9c1b8c03",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/energy_HOMO/split_3407.json",
+      "original_sha256": "9c9a42c73727ac522c33405fec96882f02f3b477b122e91897f2899f876248fd",
+      "published_sha256": "9c9a42c73727ac522c33405fec96882f02f3b477b122e91897f2899f876248fd",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-PBE0/split_2025.json",
+      "original_sha256": "8d85f3eeae79e6c3dcc2df1488eff6afddbe99b38dde1f4d466a9874ea62c3c6",
+      "published_sha256": "8d85f3eeae79e6c3dcc2df1488eff6afddbe99b38dde1f4d466a9874ea62c3c6",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/gap/split_3407.json",
+      "original_sha256": "511407be48c263b8284bcfa2d4f79db6d8162da35c57169fa3dc7254fcaa437e",
+      "published_sha256": "511407be48c263b8284bcfa2d4f79db6d8162da35c57169fa3dc7254fcaa437e",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-PBE0/split_2025.json",
+      "original_sha256": "9be10f804b67b9edcb3be4819cef94e94d5f858524382132b0847968e02c60c7",
+      "published_sha256": "9be10f804b67b9edcb3be4819cef94e94d5f858524382132b0847968e02c60c7",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/electronic_spatial_extent/split_3407.json",
+      "original_sha256": "962866c0679ba4079dc449175487239edaa2421d87a96a7d233cbc2a72d20a13",
+      "published_sha256": "962866c0679ba4079dc449175487239edaa2421d87a96a7d233cbc2a72d20a13",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-CAM/split_2025.json",
+      "original_sha256": "787bbaeb4ff7447ff1414e9380d27bc78153f5f070b91ba460358715f8be318e",
+      "published_sha256": "787bbaeb4ff7447ff1414e9380d27bc78153f5f070b91ba460358715f8be318e",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/zero_point_vibrational_energy/split_3407.json",
+      "original_sha256": "d46da6a56697c5ec31fb8971a758ecd56352e205ac9b5b87e9767304f540ea66",
+      "published_sha256": "d46da6a56697c5ec31fb8971a758ecd56352e205ac9b5b87e9767304f540ea66",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-CAM/split_2025.json",
+      "original_sha256": "de0bb8e6454bd1796dbffa6674ed21e6b765e2599c7343a7d8a83d29ee5bc052",
+      "published_sha256": "de0bb8e6454bd1796dbffa6674ed21e6b765e2599c7343a7d8a83d29ee5bc052",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/internal_energy_0K_atom_kcal_mol/split_3407.json",
+      "original_sha256": "fe7449fe41b345fa90fe3a171937e360c5c53836ed006de451b9db336043f48d",
+      "published_sha256": "fe7449fe41b345fa90fe3a171937e360c5c53836ed006de451b9db336043f48d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-CAM/split_2025.json",
+      "original_sha256": "99a2a5f178df590fe6efdb6dbd5ce72c2ae0f1a6fea5d0c47ccc6164eba78fc5",
+      "published_sha256": "99a2a5f178df590fe6efdb6dbd5ce72c2ae0f1a6fea5d0c47ccc6164eba78fc5",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm9/heat_capacity_298K/split_3407.json",
+      "original_sha256": "209c16592dba3dd975067aea02edfa52bf2292ed51486ba61d2dbf4afa7ce30b",
+      "published_sha256": "209c16592dba3dd975067aea02edfa52bf2292ed51486ba61d2dbf4afa7ce30b",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-CAM/split_2025.json",
+      "original_sha256": "2485d560579733d59d68f33edb82c7e01823de204d409d2669f4b4f5d175d6bc",
+      "published_sha256": "2485d560579733d59d68f33edb82c7e01823de204d409d2669f4b4f5d175d6bc",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-CC2/split_3407.json",
+      "original_sha256": "220abd0fee65549018664c634fdf17fd87f1a1836d70786cce212678d796e226",
+      "published_sha256": "220abd0fee65549018664c634fdf17fd87f1a1836d70786cce212678d796e226",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-CC2/split_3407.json",
+      "original_sha256": "d24cfac129f7b3796561570d90cb517e83084a1b71293838d5db802e8b1829ca",
+      "published_sha256": "d24cfac129f7b3796561570d90cb517e83084a1b71293838d5db802e8b1829ca",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-CC2/split_3407.json",
+      "original_sha256": "cbd8a74620bf3d8a9358c2c872d34c151036c731aea5b2faed1f466ff5d50b1d",
+      "published_sha256": "cbd8a74620bf3d8a9358c2c872d34c151036c731aea5b2faed1f466ff5d50b1d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-CC2/split_3407.json",
+      "original_sha256": "43a73e90bf18bcb98bdbddb1a01b8d22198006c27e6188044ce6bcdb6238a3d4",
+      "published_sha256": "43a73e90bf18bcb98bdbddb1a01b8d22198006c27e6188044ce6bcdb6238a3d4",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-PBE0/split_3407.json",
+      "original_sha256": "3f8b551cdcc60fe79c08a91fe80df396dd7d4e23d3afce538e637d69a94734e8",
+      "published_sha256": "3f8b551cdcc60fe79c08a91fe80df396dd7d4e23d3afce538e637d69a94734e8",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-PBE0/split_3407.json",
+      "original_sha256": "d0af8f794ce1819fd10dfdf9f45f3375662a248b3897e4f51d38321d9c1b8c03",
+      "published_sha256": "d0af8f794ce1819fd10dfdf9f45f3375662a248b3897e4f51d38321d9c1b8c03",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-PBE0/split_3407.json",
+      "original_sha256": "8d85f3eeae79e6c3dcc2df1488eff6afddbe99b38dde1f4d466a9874ea62c3c6",
+      "published_sha256": "8d85f3eeae79e6c3dcc2df1488eff6afddbe99b38dde1f4d466a9874ea62c3c6",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-PBE0/split_3407.json",
+      "original_sha256": "9be10f804b67b9edcb3be4819cef94e94d5f858524382132b0847968e02c60c7",
+      "published_sha256": "9be10f804b67b9edcb3be4819cef94e94d5f858524382132b0847968e02c60c7",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E1-CAM/split_3407.json",
+      "original_sha256": "787bbaeb4ff7447ff1414e9380d27bc78153f5f070b91ba460358715f8be318e",
+      "published_sha256": "787bbaeb4ff7447ff1414e9380d27bc78153f5f070b91ba460358715f8be318e",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/E2-CAM/split_3407.json",
+      "original_sha256": "de0bb8e6454bd1796dbffa6674ed21e6b765e2599c7343a7d8a83d29ee5bc052",
+      "published_sha256": "de0bb8e6454bd1796dbffa6674ed21e6b765e2599c7343a7d8a83d29ee5bc052",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f1-CAM/split_3407.json",
+      "original_sha256": "99a2a5f178df590fe6efdb6dbd5ce72c2ae0f1a6fea5d0c47ccc6164eba78fc5",
+      "published_sha256": "99a2a5f178df590fe6efdb6dbd5ce72c2ae0f1a6fea5d0c47ccc6164eba78fc5",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/configs/qm8/f2-CAM/split_3407.json",
+      "original_sha256": "2485d560579733d59d68f33edb82c7e01823de204d409d2669f4b4f5d175d6bc",
+      "published_sha256": "2485d560579733d59d68f33edb82c7e01823de204d409d2669f4b4f5d175d6bc",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/runners/trimo/trial.py",
+      "original_sha256": "3408182c6f0c5b7fc72fd91ba1987aa4a612ec80814d2fecbcab2d5c50a11cf9",
+      "published_sha256": "3408182c6f0c5b7fc72fd91ba1987aa4a612ec80814d2fecbcab2d5c50a11cf9",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/runners/trimo/boundaries.py",
+      "original_sha256": "b6e9975fdfca0117c39a520d21110a1cc0491a87434453412698e45fbb345621",
+      "published_sha256": "b6e9975fdfca0117c39a520d21110a1cc0491a87434453412698e45fbb345621",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/runners/trimo/checkpoint.py",
+      "original_sha256": "3ba5d51d8f2d9abd3d990f6794ea05d8fc56524f4b3825ac174b1fc2f9f45cbf",
+      "published_sha256": "3ba5d51d8f2d9abd3d990f6794ea05d8fc56524f4b3825ac174b1fc2f9f45cbf",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/runners/trimo/protocol_bindings.json",
+      "original_sha256": "41bcfad3686afdc85ea08625c9b90fae35d6111b71ab24fb68523a235172e26c",
+      "published_sha256": "41bcfad3686afdc85ea08625c9b90fae35d6111b71ab24fb68523a235172e26c",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/pilot/Model.py",
+      "original_sha256": "f20216dd869e73cced15f909d981199ca39f856b6fa6f8ce5b4ec0e7d7e38662",
+      "published_sha256": "f20216dd869e73cced15f909d981199ca39f856b6fa6f8ce5b4ec0e7d7e38662",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/pilot/data.py",
+      "original_sha256": "aee090c3296c72ff16aaf56e661e1f1f66da696c5ff75b31f448d9bd39c9b280",
+      "published_sha256": "aee090c3296c72ff16aaf56e661e1f1f66da696c5ff75b31f448d9bd39c9b280",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/pilot/frozen_sources.json",
+      "original_sha256": "33f2f9e049706affa4d7c85dbabccd95afe5a4396f8e8b1aed634b153d6c27e8",
+      "published_sha256": "8967e2f2da436b9e75f03698d0985c43aaf8c46b3d4737a3d2a733dd025f04ee",
+      "byte_identical": false
+    },
+    {
+      "path": "trimo/release/cohort_audit/qm9_official_retained_ids.json",
+      "original_sha256": "e318edddf1c5c28165b8011295a23fed1f4b407ab2941a325f181dd20afcf56d",
+      "published_sha256": "e318edddf1c5c28165b8011295a23fed1f4b407ab2941a325f181dd20afcf56d",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/data_prep/official_candidates/qm9/split_seed_42.json",
+      "original_sha256": "ac11bcd62326bc1dd3d7d41ae27d55e24a15ab4e49fd0d15336942a0d76d8a81",
+      "published_sha256": "ac11bcd62326bc1dd3d7d41ae27d55e24a15ab4e49fd0d15336942a0d76d8a81",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/data_prep/official_candidates/qm9/split_seed_2025.json",
+      "original_sha256": "897e1d7c9f3736e66b5272d85e50e027a628dfbf8387445b3889e868118984a0",
+      "published_sha256": "897e1d7c9f3736e66b5272d85e50e027a628dfbf8387445b3889e868118984a0",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/data_prep/official_candidates/qm9/split_seed_3407.json",
+      "original_sha256": "732b994c329a326806884c459e6831dee0cde47e7fcdc96a26e5513ca9beaaa8",
+      "published_sha256": "732b994c329a326806884c459e6831dee0cde47e7fcdc96a26e5513ca9beaaa8",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/data_prep/official_candidates/qm8/split_seed_42.json",
+      "original_sha256": "97f4219921b790fc4569055b5ed789eb17646fcce869587fcac3b1a936f252a8",
+      "published_sha256": "97f4219921b790fc4569055b5ed789eb17646fcce869587fcac3b1a936f252a8",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/data_prep/official_candidates/qm8/split_seed_2025.json",
+      "original_sha256": "34296744c848c7baf1c39971705e084b7f3b60b5a4212a040bdf0cfadf6ee5a5",
+      "published_sha256": "34296744c848c7baf1c39971705e084b7f3b60b5a4212a040bdf0cfadf6ee5a5",
+      "byte_identical": true
+    },
+    {
+      "path": "trimo/release/data_prep/official_candidates/qm8/split_seed_3407.json",
+      "original_sha256": "4522962253516a22b7c28e15fc3e305401e0e3e5b384d1f91853ee61f1762c1d",
+      "published_sha256": "4522962253516a22b7c28e15fc3e305401e0e3e5b384d1f91853ee61f1762c1d",
+      "byte_identical": true
+    }
+  ]
+}

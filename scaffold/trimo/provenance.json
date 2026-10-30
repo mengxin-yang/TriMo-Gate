@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "scope": "Byte copies and fixed-input preparation; no training/test evaluation",
+  "source_layout_root": "scaffold_benchmark_v1",
+  "release_layout_root": "release",
+  "source_files": [
+    {
+      "source_path": "runners/trimo/trial.py",
+      "path": "release/runners/trimo/trial.py",
+      "sha256": "3408182c6f0c5b7fc72fd91ba1987aa4a612ec80814d2fecbcab2d5c50a11cf9",
+      "bytes": 15873,
+      "byte_identical": true
+    },
+    {
+      "source_path": "runners/trimo/boundaries.py",
+      "path": "release/runners/trimo/boundaries.py",
+      "sha256": "b6e9975fdfca0117c39a520d21110a1cc0491a87434453412698e45fbb345621",
+      "bytes": 4203,
+      "byte_identical": true
+    },
+    {
+      "source_path": "runners/trimo/checkpoint.py",
+      "path": "release/runners/trimo/checkpoint.py",
+      "sha256": "3ba5d51d8f2d9abd3d990f6794ea05d8fc56524f4b3825ac174b1fc2f9f45cbf",
+      "bytes": 3619,
+      "byte_identical": true
+    },
+    {
+      "source_path": "runners/trimo/protocol_bindings.json",
+      "path": "release/runners/trimo/protocol_bindings.json",
+      "sha256": "41bcfad3686afdc85ea08625c9b90fae35d6111b71ab24fb68523a235172e26c",
+      "bytes": 2083,
+      "byte_identical": true
+    },
+    {
+      "source_path": "pilot/Model.py",
+      "path": "release/pilot/Model.py",
+      "sha256": "f20216dd869e73cced15f909d981199ca39f856b6fa6f8ce5b4ec0e7d7e38662",
+      "bytes": 33970,
+      "byte_identical": true
+    },
+    {
+      "source_path": "pilot/data.py",
+      "path": "release/pilot/data.py",
+      "sha256": "aee090c3296c72ff16aaf56e661e1f1f66da696c5ff75b31f448d9bd39c9b280",
+      "bytes": 3886,
+      "byte_identical": true
+    },
+    {
+      "source_path": "pilot/frozen_sources.json",
+      "path": "release/pilot/frozen_sources.json",
+      "sha256": "8967e2f2da436b9e75f03698d0985c43aaf8c46b3d4737a3d2a733dd025f04ee",
+      "bytes": 638,
+      "byte_identical": false
+    },
+    {
+      "source_path": "cohort_audit/qm9_official_retained_ids.json",
+      "path": "release/cohort_audit/qm9_official_retained_ids.json",
+      "sha256": "e318edddf1c5c28165b8011295a23fed1f4b407ab2941a325f181dd20afcf56d",
+      "bytes": 1330282,
+      "byte_identical": true
+    },
+    {
+      "source_path": "data_prep/official_candidates/qm9/split_seed_42.json",
+      "path": "release/data_prep/official_candidates/qm9/split_seed_42.json",
+      "sha256": "ac11bcd62326bc1dd3d7d41ae27d55e24a15ab4e49fd0d15336942a0d76d8a81",
+      "bytes": 1591998,
+      "byte_identical": true
+    },
+    {
+      "source_path": "data_prep/official_candidates/qm9/split_seed_2025.json",
+      "path": "release/data_prep/official_candidates/qm9/split_seed_2025.json",
+      "sha256": "897e1d7c9f3736e66b5272d85e50e027a628dfbf8387445b3889e868118984a0",
+      "bytes": 1591998,
+      "byte_identical": true
+    },
+    {
+      "source_path": "data_prep/official_candidates/qm9/split_seed_3407.json",
+      "path": "release/data_prep/official_candidates/qm9/split_seed_3407.json",
+      "sha256": "732b994c329a326806884c459e6831dee0cde47e7fcdc96a26e5513ca9beaaa8",
+      "bytes": 1591998,
+      "byte_identical": true
+    },
+    {
+      "source_path": "data_prep/official_candidates/qm8/split_seed_42.json",
+      "path": "release/data_prep/official_candidates/qm8/split_seed_42.json",
+      "sha256": "97f4219921b790fc4569055b5ed789eb17646fcce869587fcac3b1a936f252a8",
+      "bytes": 249946,
+      "byte_identical": true
+    },
+    {
+      "source_path": "data_prep/official_candidates/qm8/split_seed_2025.json",
+      "path": "release/data_prep/official_candidates/qm8/split_seed_2025.json",
+      "sha256": "34296744c848c7baf1c39971705e084b7f3b60b5a4212a040bdf0cfadf6ee5a5",
+      "bytes": 249946,
+      "byte_identical": true
+    },
+    {
+      "source_path": "data_prep/official_candidates/qm8/split_seed_3407.json",
+      "path": "release/data_prep/official_candidates/qm8/split_seed_3407.json",
+      "sha256": "4522962253516a22b7c28e15fc3e305401e0e3e5b384d1f91853ee61f1762c1d",
+      "bytes": 249946,
+      "byte_identical": true
+    }
+  ],
+  "config_templates": {
+    "qm9": {
+      "path": "runners/trimo/config_qm9_mu.json",
+      "sha256": "561dd15c6bf899098b0f054861ea76569327f928ddb00e622cf781e434067578",
+      "permitted_config_changes": [
+        "target",
+        "unit",
+        "seed"
+      ]
+    },
+    "qm8": {
+      "path": "runners/trimo/config_qm8_e1_cc2.json",
+      "sha256": "9475839aee938d3b14179fec2e294356081458c7627346ab35c3d497cea1e09f",
+      "permitted_config_changes": [
+        "target",
+        "unit",
+        "seed"
+      ]
+    }
+  },
+  "original_sources_modified": false,
+  "data_arrays_read": [
+    "ids"
+  ],
+  "data_hashes_verified": true,
+  "runtime_imports": [
+    "numpy",
+    "torch",
+    "torch_geometric",
+    "torch_scatter"
+  ],
+  "historical_pilot_manifest": "pilot/frozen_sources.json is copied unchanged. Its old QM9 candidate_seed42_sha256 is historical and is NOT the split authority. The current runner checks Model/data against its FROZEN constants and current splits against protocol_bindings.json.",
+  "not_a_reproduction_claim": "This is the fixed existing candidate recipe, not HPO/Bayesian optimization or exact published training-budget reproduction.",
+  "historical_data_notes": "Existing metadata/candidate filenames and pilot-only status text are preserved byte-for-byte; this release does not rebuild data or remove known topology/identity caveats."
+}

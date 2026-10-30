@@ -1,13 +1,37 @@
 cff-version: 1.2.0
-message: "Please cite the associated manuscript and the original QM9/QM8 datasets when using this research code."
-title: "TriMo-Gate: Multimodal Fusion and Sensitivity to Input Geometry in Quantum-Chemical Property Prediction"
+message: "Please cite the associated manuscript below and the original QM9/QM8 datasets when using this research code."
+title: "TriMo-Gate research software"
 type: software
 authors:
   - family-names: Yang
     given-names: Mengxin
-abstract: "SMILES, graph and point-cloud learning with fusion ablations, cross-modal contrastive regularization and controlled geometry-quality experiments on QM9 and QM8."
+url: "https://github.com/mengxin-yang/TriMo-Gate"
+repository-code: "https://github.com/mengxin-yang/TriMo-Gate"
+abstract: "SMILES, graph and point-cloud learning for property-dependent modality and fusion comparisons, geometry-quality experiments, and supplementary scaffold-based evaluation on QM9 and QM8."
 keywords:
   - molecular property prediction
   - multimodal learning
+  - scaffold split
   - QM9
   - QM8
+preferred-citation:
+  type: unpublished
+  title: "More Is Not Always Better: Property-Dependent Multimodal Learning for Quantum-Chemical Property Prediction"
+  authors:
+    - family-names: Yang
+      given-names: Mengxin
+      affiliation: "State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+    - family-names: Xiang
+      given-names: Yu
+      affiliation: "State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+    - family-names: Yao
+      given-names: Fujian
+      affiliation: "State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+    - family-names: Zhao
+      given-names: Jingyi
+      affiliation: "State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+    - family-names: Wu
+      given-names: Haichao
+      affiliation: "State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China"
+  year: 2026
+  notes: "Manuscript; publication venue, acceptance status and DOI are not asserted."

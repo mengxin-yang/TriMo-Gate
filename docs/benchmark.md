@@ -9,6 +9,10 @@ repository. The six fusion choices now available on this benchmark backbone
 use its own protocol; the archived controlled experiments use different seeds
 and selection protocols.
 
+## Revised manuscript scope
+
+The principal Section 4.1 tables remain historical random-split comparisons, including literature-reported external baselines. The added scaffold evaluation is a separate supplement (SI Section 5 / Table S6), documented in the [scaffold guide](scaffold.md); the commands in this benchmark guide do not switch to scaffold splits.
+
 ## Installation
 
 Use Python 3.11 and install PyTorch, PyTorch Geometric (`torch-geometric`), and

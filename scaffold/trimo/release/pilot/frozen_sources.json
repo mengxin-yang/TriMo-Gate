@@ -1,0 +1,19 @@
+{
+  "status": "frozen_source_snapshots_for_engineering_pilot",
+  "files": {
+    "Model.py": {
+      "source_path": "benchmark/Model.py",
+      "sha256": "f20216dd869e73cced15f909d981199ca39f856b6fa6f8ce5b4ec0e7d7e38662",
+      "bytes": 33970
+    },
+    "data.py": {
+      "source_path": "trimo_pilot/data.py",
+      "sha256": "aee090c3296c72ff16aaf56e661e1f1f66da696c5ff75b31f448d9bd39c9b280",
+      "bytes": 3886
+    }
+  },
+  "candidate_seed42_sha256": {
+    "qm8": "97f4219921b790fc4569055b5ed789eb17646fcce869587fcac3b1a936f252a8",
+    "qm9": "2bd5944718a03e17d3f2e91d491c920c6e0e8c6bca54fdac03ba76822de773ee"
+  }
+}

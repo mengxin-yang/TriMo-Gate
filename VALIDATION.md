@@ -26,3 +26,34 @@ unchanged; their checks above remain dated 2026-10-08.
 The local CPU checks used Python 3.11.4, PyTorch 2.6.0+cu124, PyG 2.5.3, torch-scatter 2.1.2+pt26cu124, NumPy 2.1.2 and RDKit 2026.03.3. This is the **packaging-test environment**, not a replacement claim about the historical server environment. Historical stacks are recorded separately.
 
 These checks did not rerun formal training, the full geometry-generation population, the optional Bayesian search, or all manuscript figures and Excel exports. They do not establish full numerical reproduction, historical table provenance, or license ownership. Test-generated caches, logs and checkpoints are excluded from the repository.
+
+## Manuscript and scaffold update on 2026-10-30
+
+The revised title, five-person manuscript author order, affiliation,
+corresponding-author details and current repository URL were checked against
+the supplied manuscript. All 20 historical random-split means agree with its
+principal tables at the reported precision. The CFF preferred citation lists
+the five manuscript authors separately from software attribution, with no
+invented DOI, publication venue or acceptance status.
+
+The supplementary scaffold publication checks covered:
+
+- All 78 copied files against original and public hashes: 74 unchanged and
+  four private-path/hash adaptations recorded in the publication manifest.
+  Model, training/checkpoint code, all 60 configs, six partitions and retained
+  molecule IDs remain byte-identical.
+- The published evaluator's source/configuration checks for all 60 planned
+  runs, without loading datasets or fitting a model, and all three documented
+  command-line help entry points.
+- Nine existing evaluator boundary tests against the published evaluator,
+  including invalid bindings, incomplete runs, scaler mismatch, tied
+  checkpoint selection, partition integrity and unchanged model state.
+- Independent extraction and recomputation of 60 final metrics and 20
+  mean/sample-SD summaries from hash-verified historical evaluation receipts;
+  scans for private paths, server addresses, credentials and unexpected files.
+
+These are publication and provenance checks. They did not rerun the 60 fits,
+allocate a GPU, rebuild the full feature caches or evaluate new test data.
+Scaffold final-result evidence comes from the completed experiments, not from
+these packaging tests. Historical fusion and geometry source files were not
+changed in this update.

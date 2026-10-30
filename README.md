@@ -1,8 +1,14 @@
 # TriMo-Gate
 
-Research code accompanying **TriMo-Gate: Multimodal Fusion and Sensitivity to Input Geometry in Quantum-Chemical Property Prediction** by Mengxin Yang.
+Research code accompanying **More Is Not Always Better: Property-Dependent Multimodal Learning for Quantum-Chemical Property Prediction**.
 
-TriMo-Gate combines SMILES, molecular graph, and molecular point-cloud representations for property prediction. This repository collects the relevant QM9 and QM8 implementations, fusion comparisons, cross-modal contrastive regularization (CMCR), and geometry-quality experiments. It excludes unrelated classification projects, cloud administration scripts, private credentials, datasets, and trained weights.
+**Manuscript authors:** Mengxin Yang, Yu Xiang, Fujian Yao, Jingyi Zhao, and Haichao Wu.
+
+State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China. Corresponding author: Haichao Wu ([haichao.wu@sjtu.edu.cn](mailto:haichao.wu@sjtu.edu.cn)).
+
+The model remains **TriMo-Gate**. The current repository is [https://github.com/mengxin-yang/TriMo-Gate](https://github.com/mengxin-yang/TriMo-Gate).
+
+TriMo-Gate combines SMILES, molecular graph, and molecular point-cloud representations for property prediction. This repository collects the relevant QM9 and QM8 implementations, fusion comparisons, cross-modal contrastive regularization (CMCR), geometry-quality experiments, and supplementary scaffold-based evaluation. The study examines how useful input representations and geometry fidelity vary by target property; adding modalities does not imply a universal accuracy improvement. It excludes unrelated classification projects, cloud administration scripts, private credentials, datasets, and trained weights.
 
 ## Choose the appropriate experiment
 
@@ -11,10 +17,17 @@ TriMo-Gate combines SMILES, molecular graph, and molecular point-cloud represent
 | `benchmark/` | Original modality ablations and CMCR, plus six fusion choices on the benchmark backbone | Historical seeds 42, 44, 46; see [benchmark guide](docs/benchmark.md) |
 | `fusion/` | Six fusion implementations and archived controlled comparisons | Seeds 42, 2025, 3407; see [fusion guide](docs/fusion.md) |
 | `geometry/` | Conformer generation and A/B/C/D evaluation for eight QM9 and twelve QM8 targets | Seeds 42, 2025, 3407; see [geometry guide](docs/geometry.md) |
+| `scaffold/` | Supplementary TriMo evaluation on eight QM9 and twelve QM8 targets; frozen partitions, source and verified summaries | Split seeds 42, 2025, 3407; training seed 42; see [scaffold guide](docs/scaffold.md) |
 
 These experiment families have different data and evaluation protocols. Their scores must not be substituted for one another. The guides describe the available source snapshots, publication adaptations, required inputs, and verification limits.
 
 `benchmark/run.py --fusion` selects `concat`, `mean`, `weighted`, `attention`, `gate_no_interaction`, or `gate` (the unchanged default). These new benchmark options are separate from the archived controlled comparisons in `fusion/`; see the [fusion choices and examples](docs/benchmark.md#fusion-choices).
+
+## Relationship to the revised manuscript
+
+The supplementary scaffold evaluation corresponds to SI Section 5 and Table S6 referenced in manuscript Sections 3.2 and 4.1. The principal tables in Section 4.1 still compare historical random-split results with literature-reported baselines; they are not presented here as a uniformly retrained benchmark. Later KRR/QM8 and AttentiveFP/QM9 runs are tracked separately in the [scaffold guide](docs/scaffold.md#separate-follow-up-baselines).
+
+The historical random and scaffold comparisons differ in cohort filtering, seed design and training/selection settings. Their MAE differences must not be attributed solely to the splitting method. Geometry A/B/C/D and controlled fusion experiments retain their own protocols.
 
 ## Getting started
 
@@ -45,7 +58,7 @@ Report native units and the mean and **sample** standard deviation over the thre
 - QM8: Ramakrishnan et al., *The Journal of Chemical Physics* **143**, 084111 (2015), [doi:10.1063/1.4928757](https://doi.org/10.1063/1.4928757).
 - Dataset overview: [MoleculeNet](https://moleculenet.org/datasets-1).
 
-Please cite the datasets and relevant methods/software as well as the associated manuscript. `CITATION.cff` identifies this code project; no publication DOI or acceptance status is implied.
+Please cite the datasets and relevant methods/software as well as the associated manuscript. `CITATION.cff` identifies this code project and provides the revised manuscript title and all five authors as the preferred citation. Manuscript authorship is distinct from software-contributor attribution; no publication DOI or acceptance status is implied.
 
 ## Reproducibility and licensing
 

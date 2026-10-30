@@ -1,0 +1,806 @@
+{
+  "comparison": "Historical random vs new scaffold protocols; descriptive, not a split-only causal ablation",
+  "standard_deviation": "Sample SD, ddof=1; across three random runs or three scaffold partitions, respectively",
+  "rows": [
+    {
+      "dataset": "qm9",
+      "target": "dipole_moment",
+      "unit": "Debye",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.27108437966771803,
+      "scaffold_mae_sample_sd": 0.009445604984206192,
+      "scaffold_rmse_mean": 0.41050562230052295,
+      "scaffold_rmse_sample_sd": 0.012866931160390461,
+      "historical_random_mae_mean": 0.2642725285761213,
+      "historical_random_mae_sample_sd": 0.003092924957361617,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.2621096558525569,
+          "mae_stored_text": "0.2621096558525569",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 0.2678151985672277,
+          "mae_stored_text": "0.2678151985672277",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 0.2628927313085794,
+          "mae_stored_text": "0.2628927313085794",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "fb06948b5f658718e5bfba1a665b2dd361326386a64f6a85b7433d1c006757ec",
+      "change_percent": 2.577585770378188
+    },
+    {
+      "dataset": "qm9",
+      "target": "isotropic_polarizability",
+      "unit": "a0^3",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.18310802206627175,
+      "scaffold_mae_sample_sd": 0.008160644513305504,
+      "scaffold_rmse_mean": 0.32645952650696713,
+      "scaffold_rmse_sample_sd": 0.034963216595732254,
+      "historical_random_mae_mean": 0.2249844421943029,
+      "historical_random_mae_sample_sd": 0.01733348365889958,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.2299925833940506,
+          "mae_stored_text": "0.2299925833940506",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 0.2392624616622925,
+          "mae_stored_text": "0.2392624616622925",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 0.2056982815265656,
+          "mae_stored_text": "0.2056982815265656",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "21f3ed89e96ecc31831085f7d6c8b2595c07998c624ef2330b3d4c1fc85c6559",
+      "change_percent": -18.61302929198345
+    },
+    {
+      "dataset": "qm9",
+      "target": "energy_HOMO",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.0032161256944311456,
+      "scaffold_mae_sample_sd": 8.63477615014345e-05,
+      "scaffold_rmse_mean": 0.004406367215779195,
+      "scaffold_rmse_sample_sd": 0.00013762013204156117,
+      "historical_random_mae_mean": 0.0023988114181337237,
+      "historical_random_mae_sample_sd": 4.2424473416653236e-05,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.002403008528216129,
+          "mae_stored_text": "0.002403008528216129",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 0.002438981340057009,
+          "mae_stored_text": "0.002438981340057009",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 0.002354444386128033,
+          "mae_stored_text": "0.002354444386128033",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "707cc24eae551dfff08144c333fb549766befbd79b5670213205d4fce485761f",
+      "change_percent": 34.071635232305695
+    },
+    {
+      "dataset": "qm9",
+      "target": "gap",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.004420304662488491,
+      "scaffold_mae_sample_sd": 7.738750567002092e-05,
+      "scaffold_rmse_mean": 0.006126234827327542,
+      "scaffold_rmse_sample_sd": 9.086841832882592e-05,
+      "historical_random_mae_mean": 0.0034421343977252645,
+      "historical_random_mae_sample_sd": 2.7582700562624118e-05,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.003411296056583524,
+          "mae_stored_text": "0.003411296056583524",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 0.003450657706707716,
+          "mae_stored_text": "0.003450657706707716",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 0.003464449429884553,
+          "mae_stored_text": "0.003464449429884553",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "8723e7f1e62a106096199fc67d115f8c79bf12ed5ddbf935b6fcc9bb7cf465dc",
+      "change_percent": 28.417550035514317
+    },
+    {
+      "dataset": "qm9",
+      "target": "electronic_spatial_extent",
+      "unit": "a0^2",
+      "n_splits": 3,
+      "scaffold_mae_mean": 6.548557540278073,
+      "scaffold_mae_sample_sd": 1.837313294935255,
+      "scaffold_rmse_mean": 8.857176293662441,
+      "scaffold_rmse_sample_sd": 2.380714417743117,
+      "historical_random_mae_mean": 8.377373059590658,
+      "historical_random_mae_sample_sd": 1.2853835442729784,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 9.72983169555664,
+          "mae_stored_text": "9.729831695556641",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 7.171660423278809,
+          "mae_stored_text": "7.171660423278809",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 8.230627059936523,
+          "mae_stored_text": "8.230627059936523",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "273234768da24e698b9c279153a6c61044894c950cef41e15f937d69a3b1eefe",
+      "change_percent": -21.83041755814974
+    },
+    {
+      "dataset": "qm9",
+      "target": "zero_point_vibrational_energy",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.0001924257463751262,
+      "scaffold_mae_sample_sd": 1.1855135720909972e-06,
+      "scaffold_rmse_mean": 0.0002927189933772439,
+      "scaffold_rmse_sample_sd": 3.273552517359102e-05,
+      "historical_random_mae_mean": 0.00035285013981316456,
+      "historical_random_mae_sample_sd": 0.00017581836254266863,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.0002430795697795757,
+          "mae_stored_text": "0.0002430795697795757",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 0.000555637125540468,
+          "mae_stored_text": "0.000555637125540468",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 0.0002598337241194499,
+          "mae_stored_text": "0.0002598337241194499",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "53a9324a01cfdaf64c99891df2054c3456ea8f69746c376338fcfc6af8cea3a3",
+      "change_percent": -45.46530533415224
+    },
+    {
+      "dataset": "qm9",
+      "target": "internal_energy_0K_atom_kcal_mol",
+      "unit": "kcal/mol",
+      "n_splits": 3,
+      "scaffold_mae_mean": 1.489575339049788,
+      "scaffold_mae_sample_sd": 0.13979379317521032,
+      "scaffold_rmse_mean": 2.613861527576199,
+      "scaffold_rmse_sample_sd": 0.6902629930229586,
+      "historical_random_mae_mean": 2.6755677064259844,
+      "historical_random_mae_sample_sd": 0.31762576941755843,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 2.764888048171997,
+          "mae_stored_text": "2.764888048171997",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 2.93897008895874,
+          "mae_stored_text": "2.93897008895874",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 2.322844982147217,
+          "mae_stored_text": "2.322844982147217",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "e3b7429521e6dbc6ee0974a80226c6e1c166a9dfa79ee48909337ba4697cd84e",
+      "change_percent": -44.32675594520617
+    },
+    {
+      "dataset": "qm9",
+      "target": "heat_capacity_298K",
+      "unit": "cal/mol/K",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.0809175939337164,
+      "scaffold_mae_sample_sd": 0.000908745763045887,
+      "scaffold_rmse_mean": 0.12443672814414715,
+      "scaffold_rmse_sample_sd": 0.004227174617433177,
+      "historical_random_mae_mean": 0.08943418229481664,
+      "historical_random_mae_sample_sd": 0.003919520259693259,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.0898130178734625,
+          "mae_stored_text": "0.08981301787346251",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 44,
+          "mae": 0.08533899930909365,
+          "mae_stored_text": "0.08533899930909365",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        },
+        {
+          "seed": 46,
+          "mae": 0.09315052970189376,
+          "mae_stored_text": "0.09315052970189376",
+          "train_count": 107108,
+          "val_count": 13388,
+          "test_count": 13389
+        }
+      ],
+      "historical_random_source_sha256": "9e9c32de04c30298856632a35288a225a86769a62f3cf5475a3aedf2282fac5d",
+      "change_percent": -9.52274414834543
+    },
+    {
+      "dataset": "qm8",
+      "target": "E1-CC2",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.005345412324893504,
+      "scaffold_mae_sample_sd": 0.000656793496034992,
+      "scaffold_rmse_mean": 0.007663547473653459,
+      "scaffold_rmse_sample_sd": 0.001099645772788414,
+      "historical_random_mae_mean": 0.0036327009244511523,
+      "historical_random_mae_sample_sd": 0.00014253786773176007,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.003635361324995756,
+          "mae_stored_text": "0.003635361324995756",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.003773889970034361,
+          "mae_stored_text": "0.003773889970034361",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.00348885147832334,
+          "mae_stored_text": "0.00348885147832334",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "78328d2a96df54d5d463dc7bd4fafd1446cd1bce0c68bfcc6d9c974215c61e30",
+      "change_percent": 47.147052181322024
+    },
+    {
+      "dataset": "qm8",
+      "target": "E2-CC2",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.006629234069690374,
+      "scaffold_mae_sample_sd": 0.0006419397107715142,
+      "scaffold_rmse_mean": 0.009241175022951706,
+      "scaffold_rmse_sample_sd": 0.0011514031201306496,
+      "historical_random_mae_mean": 0.005116832908242941,
+      "historical_random_mae_sample_sd": 7.473488484385543e-05,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.005031546112149954,
+          "mae_stored_text": "0.005031546112149954",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.005170874763280153,
+          "mae_stored_text": "0.005170874763280153",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.005148077849298716,
+          "mae_stored_text": "0.005148077849298716",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "f45644b1fd0a26eb201ff310f7e6579203623fc24338893ce43b14aeca15ec3d",
+      "change_percent": 29.557368563101537
+    },
+    {
+      "dataset": "qm8",
+      "target": "f1-CC2",
+      "unit": "dimensionless",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.013582119308332754,
+      "scaffold_mae_sample_sd": 0.0019481483667522239,
+      "scaffold_rmse_mean": 0.03234791498138768,
+      "scaffold_rmse_sample_sd": 0.0042746075189956795,
+      "historical_random_mae_mean": 0.009876588980356853,
+      "historical_random_mae_sample_sd": 0.0003477542494212965,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.01004599500447512,
+          "mae_stored_text": "0.01004599500447512",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.01010717824101448,
+          "mae_stored_text": "0.01010717824101448",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.00947659369558096,
+          "mae_stored_text": "0.009476593695580959",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "a59f2c51bcd283430e653229263bd4e15688417035b36e2800f9949d7c3d5199",
+      "change_percent": 37.518320701060645
+    },
+    {
+      "dataset": "qm8",
+      "target": "f2-CC2",
+      "unit": "dimensionless",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.030013358870863704,
+      "scaffold_mae_sample_sd": 0.005986738765723435,
+      "scaffold_rmse_mean": 0.05796924589152721,
+      "scaffold_rmse_sample_sd": 0.010980178682664269,
+      "historical_random_mae_mean": 0.023957177996635437,
+      "historical_random_mae_sample_sd": 0.000813679397377699,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.02309627830982208,
+          "mae_stored_text": "0.02309627830982208",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.02471353113651276,
+          "mae_stored_text": "0.02471353113651276",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.02406172454357147,
+          "mae_stored_text": "0.02406172454357147",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "d5fe7fb422afbd7fb9ed1b251976b66dd82a6d81c3a02debbffeb26e9246f55d",
+      "change_percent": 25.27919137670891
+    },
+    {
+      "dataset": "qm8",
+      "target": "E1-PBE0",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.0050607569100800985,
+      "scaffold_mae_sample_sd": 0.0004967903323650314,
+      "scaffold_rmse_mean": 0.007086853905647581,
+      "scaffold_rmse_sample_sd": 0.0007007239941266361,
+      "historical_random_mae_mean": 0.0035727407472829023,
+      "historical_random_mae_sample_sd": 9.547499270039216e-05,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.003535843221470714,
+          "mae_stored_text": "0.003535843221470714",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.003681158414110541,
+          "mae_stored_text": "0.003681158414110541",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.003501220606267452,
+          "mae_stored_text": "0.003501220606267452",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "3a3e0dd70ec878afb4222d4156abebd5ab306826ae0d45a223af5ceded6e5632",
+      "change_percent": 41.64915027570484
+    },
+    {
+      "dataset": "qm8",
+      "target": "E2-PBE0",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.006078776935596799,
+      "scaffold_mae_sample_sd": 0.00033903947768761333,
+      "scaffold_rmse_mean": 0.008192955798977582,
+      "scaffold_rmse_sample_sd": 0.00034870007566958395,
+      "historical_random_mae_mean": 0.004598322479675214,
+      "historical_random_mae_sample_sd": 0.0001224659185796635,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.004724390804767609,
+          "mae_stored_text": "0.004724390804767609",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.004590767901390791,
+          "mae_stored_text": "0.004590767901390791",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.004479808732867241,
+          "mae_stored_text": "0.004479808732867241",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "ae712792409c8108c29b9b2bab2ba40b61bde5c001d95abebfbd586fbd3c7a88",
+      "change_percent": 32.19553353348441
+    },
+    {
+      "dataset": "qm8",
+      "target": "f1-PBE0",
+      "unit": "dimensionless",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.012863458167960177,
+      "scaffold_mae_sample_sd": 0.004485655900334978,
+      "scaffold_rmse_mean": 0.031197188778413876,
+      "scaffold_rmse_sample_sd": 0.009288492862508092,
+      "historical_random_mae_mean": 0.008384661301251475,
+      "historical_random_mae_sample_sd": 0.0007126812259104419,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.008053542105283222,
+          "mae_stored_text": "0.008053542105283222",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.009202665983753229,
+          "mae_stored_text": "0.009202665983753229",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.007897775814717975,
+          "mae_stored_text": "0.007897775814717975",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "0c43b9947b47be1c43c49342f633e610aff2949131fe794479968b56c0ed8d55",
+      "change_percent": 53.41655083956947
+    },
+    {
+      "dataset": "qm8",
+      "target": "f2-PBE0",
+      "unit": "dimensionless",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.02576166422584713,
+      "scaffold_mae_sample_sd": 0.004283697096543164,
+      "scaffold_rmse_mean": 0.05324042583465136,
+      "scaffold_rmse_sample_sd": 0.01115640939917257,
+      "historical_random_mae_mean": 0.017788129794036524,
+      "historical_random_mae_sample_sd": 0.0008607245375124928,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.01706074963066707,
+          "mae_stored_text": "0.01706074963066707",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.01873836510239057,
+          "mae_stored_text": "0.01873836510239057",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.01756527464905193,
+          "mae_stored_text": "0.01756527464905193",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "b39fb7746de423c0ddf6d5fe2bb9045fca04740db8df459a468bd9a89981ca16",
+      "change_percent": 44.82502952324834
+    },
+    {
+      "dataset": "qm8",
+      "target": "E1-CAM",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.0047222379838853705,
+      "scaffold_mae_sample_sd": 0.0002119452691286953,
+      "scaffold_rmse_mean": 0.006657906623715212,
+      "scaffold_rmse_sample_sd": 0.00025341307920186986,
+      "historical_random_mae_mean": 0.0033591228226820626,
+      "historical_random_mae_sample_sd": 0.00016591011529903626,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.003188649890944362,
+          "mae_stored_text": "0.003188649890944362",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.003368659876286983,
+          "mae_stored_text": "0.003368659876286983",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.003520058700814843,
+          "mae_stored_text": "0.003520058700814843",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "610152ab4176d17fa0693fdbf3d90e96208f9a1df2ef8be76e78152745b141cf",
+      "change_percent": 40.57949748068277
+    },
+    {
+      "dataset": "qm8",
+      "target": "E2-CAM",
+      "unit": "hartree",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.005729153601073187,
+      "scaffold_mae_sample_sd": 0.00019199022999484975,
+      "scaffold_rmse_mean": 0.0077996151528876324,
+      "scaffold_rmse_sample_sd": 0.00024892828613589133,
+      "historical_random_mae_mean": 0.004215195154150327,
+      "historical_random_mae_sample_sd": 6.353783231946098e-05,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.004165380261838436,
+          "mae_stored_text": "0.004165380261838436",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.004286749288439751,
+          "mae_stored_text": "0.004286749288439751",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.004193455912172794,
+          "mae_stored_text": "0.004193455912172794",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "a3b106733b80d8b65f30ee9320bee66675ecb3612a299668f3312550b3cf1b1f",
+      "change_percent": 35.91668692805836
+    },
+    {
+      "dataset": "qm8",
+      "target": "f1-CAM",
+      "unit": "dimensionless",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.01432555053594074,
+      "scaffold_mae_sample_sd": 0.003924199133888288,
+      "scaffold_rmse_mean": 0.036587948654538474,
+      "scaffold_rmse_sample_sd": 0.005177621411622684,
+      "historical_random_mae_mean": 0.008190729344884554,
+      "historical_random_mae_sample_sd": 0.0003735011003869995,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.007859365083277225,
+          "mae_stored_text": "0.007859365083277225",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.008117347955703735,
+          "mae_stored_text": "0.008117347955703735",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.008595474995672703,
+          "mae_stored_text": "0.008595474995672703",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "026cc4c763fcb338bcb48081280910bdbae27db3c755474ad040d1ad9c729841",
+      "change_percent": 74.8995716100378
+    },
+    {
+      "dataset": "qm8",
+      "target": "f2-CAM",
+      "unit": "dimensionless",
+      "n_splits": 3,
+      "scaffold_mae_mean": 0.029881924827502508,
+      "scaffold_mae_sample_sd": 0.0037727920594904873,
+      "scaffold_rmse_mean": 0.0582952450194043,
+      "scaffold_rmse_sample_sd": 0.007260751193776802,
+      "historical_random_mae_mean": 0.01998888390759627,
+      "historical_random_mae_sample_sd": 0.0007770051053003972,
+      "historical_random_per_seed": [
+        {
+          "seed": 42,
+          "mae": 0.0195212010294199,
+          "mae_stored_text": "0.0195212010294199",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 44,
+          "mae": 0.02088581770658493,
+          "mae_stored_text": "0.02088581770658493",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        },
+        {
+          "seed": 46,
+          "mae": 0.01955963298678398,
+          "mae_stored_text": "0.01955963298678398",
+          "train_count": 17397,
+          "val_count": 2174,
+          "test_count": 2176
+        }
+      ],
+      "historical_random_source_sha256": "a07f07c7e6283cb2c849bfc50b4126da2b7d79ba94836fdc9df26ca3b4659978",
+      "change_percent": 49.49271287801436
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "qm8": {
+    "status": "DRAFT audited official candidates; not final protocol approval",
+    "cache_count": 21747,
+    "cohort_count": 21747,
+    "cache_sha256": "b2f3c426d5dd9ed66e214317d69af2f352f036e175f6066a864876c685708acc",
+    "metadata_sha256": "8d9ef07aa49395291c27125de663231636e914114ed08b05d1fd0017364983be",
+    "split_sha256": {
+      "42": "97f4219921b790fc4569055b5ed789eb17646fcce869587fcac3b1a936f252a8",
+      "2025": "34296744c848c7baf1c39971705e084b7f3b60b5a4212a040bdf0cfadf6ee5a5",
+      "3407": "4522962253516a22b7c28e15fc3e305401e0e3e5b384d1f91853ee61f1762c1d"
+    },
+    "target_units": {
+      "E1-CC2": "hartree",
+      "E2-CC2": "hartree",
+      "f1-CC2": "dimensionless",
+      "f2-CC2": "dimensionless",
+      "E1-PBE0": "hartree",
+      "E2-PBE0": "hartree",
+      "f1-PBE0": "dimensionless",
+      "f2-PBE0": "dimensionless",
+      "E1-CAM": "hartree",
+      "E2-CAM": "hartree",
+      "f1-CAM": "dimensionless",
+      "f2-CAM": "dimensionless"
+    }
+  },
+  "qm9": {
+    "status": "DRAFT audited official candidates; not final protocol approval",
+    "cache_count": 133885,
+    "cohort_count": 130831,
+    "cache_sha256": "c42e44ec05788afb284438e6e346be6fc1b5805838dfe97e79f9ae4d1495b5cc",
+    "metadata_sha256": "ebcae50668e2cc0522ee0304d968827d55e72560e81340629cbf4b4170395b54",
+    "split_sha256": {
+      "42": "ac11bcd62326bc1dd3d7d41ae27d55e24a15ab4e49fd0d15336942a0d76d8a81",
+      "2025": "897e1d7c9f3736e66b5272d85e50e027a628dfbf8387445b3889e868118984a0",
+      "3407": "732b994c329a326806884c459e6831dee0cde47e7fcdc96a26e5513ca9beaaa8"
+    },
+    "target_units": {
+      "dipole_moment": "Debye",
+      "isotropic_polarizability": "a0^3",
+      "energy_HOMO": "hartree",
+      "gap": "hartree",
+      "electronic_spatial_extent": "a0^2",
+      "zero_point_vibrational_energy": "hartree",
+      "internal_energy_0K_atom_kcal_mol": "kcal/mol",
+      "heat_capacity_298K": "cal/mol/K"
+    },
+    "retained_sha256": "e318edddf1c5c28165b8011295a23fed1f4b407ab2941a325f181dd20afcf56d"
+  }
+}

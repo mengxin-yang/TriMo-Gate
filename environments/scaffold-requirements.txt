@@ -1,0 +1,10 @@
+# Linux/Python 3.12. Install matching CUDA/PyG wheels before this file.
+# Verified checkpoint runtime: torch 2.7.1+cu128, CUDA 12.8, numpy 2.4.6.
+# PyG/scatter versions were required by the deployment runtime gate.
+# This records versions; CUDA extension wheels require their official indexes.
+numpy==2.4.6
+torch==2.7.1+cu128
+torch-geometric==2.6.1
+torch-scatter==2.1.2+pt27cu128
+# RDKit was used for scaffold construction; the published splits are fixed.
+rdkit==2026.3.3
