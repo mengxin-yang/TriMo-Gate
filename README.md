@@ -21,12 +21,6 @@ These experiment families have different data and evaluation protocols. Their sc
 
 `benchmark/run.py --fusion` selects `concat`, `mean`, `weighted`, `attention`, `gate_no_interaction`, or `gate` (the unchanged default). These new benchmark options are separate from the archived controlled comparisons in `fusion/`; see the [fusion choices and examples](docs/benchmark.md#fusion-choices).
 
-## Relationship to the revised manuscript
-
-The supplementary scaffold evaluation corresponds to SI Section 5 and Table S6 referenced in manuscript Sections 3.2 and 4.1. The principal tables in Section 4.1 still compare historical random-split results with literature-reported baselines; they are not presented here as a uniformly retrained benchmark. Later KRR/QM8 and AttentiveFP/QM9 runs are tracked separately in the [scaffold guide](docs/scaffold.md#separate-follow-up-baselines).
-
-The historical random and scaffold comparisons differ in cohort filtering, seed design and training/selection settings. Their MAE differences must not be attributed solely to the splitting method. Geometry A/B/C/D and controlled fusion experiments retain their own protocols.
-
 ## Getting started
 
 1. Create a separate Python environment for the experiment family you need. Read its guide before installing dependencies. PyTorch, CUDA and compiled PyG extensions must be mutually compatible; the coordinate-generation RDKit environment is recorded separately.
