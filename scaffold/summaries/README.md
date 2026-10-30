@@ -1,6 +1,6 @@
 # Verified TriMo summaries
 
-`trimo_per_split.json` contains 60 final-test metrics and provenance hashes. `random_vs_scaffold.json` contains 20 property summaries, full-precision means and sample SDs, and the historical per-seed MAEs. The compact table below shows mean MAE; use the JSON for SD and unrounded calculations.
+`trimo_per_split.json` contains 60 final-test metrics and provenance hashes. `random_vs_scaffold.json` contains 20 property summaries, full-precision means and sample SDs, and the random-split per-seed MAEs. The compact table below shows mean MAE; use the JSON for SD and unrounded calculations.
 
 **This is a descriptive comparison of two protocols, not a split-only ablation.** Cohort filtering, seeds and training/selection settings differ. Positive change means higher scaffold MAE. Do not pool MAEs across different units.
 

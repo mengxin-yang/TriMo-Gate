@@ -2,7 +2,7 @@
   "date": "2026-10-30",
   "original_plan_sha256": "446efd0e02df38191ee28662db53d1dffd688f0fa9950bc819ac7e33c223f58b",
   "published_plan_sha256": "e842a7640b6f3b62c11502fdc84e4c1e4c5e4618e1ee699144f99c0caeb0e50a",
-  "adaptation": "Two private source paths replaced with relative source names. Only their frozen metadata hash, evaluator expected metadata hash, provenance record and plan provenance hash were updated. Model, data loader, training/checkpoint code, protocol bindings, all configs and molecule partitions are byte-identical. Historical results keep their original plan/evaluator hashes.",
+  "adaptation": "Four distributed files differ from the experiment sources only in private-path removal and dependent metadata hashes. Model, data loader, training/checkpoint code, protocol bindings, all configs and molecule partitions are byte-identical. Numerical results retain the plan/evaluator hashes from their actual execution.",
   "files": [
     {
       "path": "trimo/evaluate.py",

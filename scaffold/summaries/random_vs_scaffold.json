@@ -1,5 +1,5 @@
 {
-  "comparison": "Historical random vs new scaffold protocols; descriptive, not a split-only causal ablation",
+  "comparison": "Random-split and scaffold protocols; descriptive, not a split-only causal ablation",
   "standard_deviation": "Sample SD, ddof=1; across three random runs or three scaffold partitions, respectively",
   "rows": [
     {

@@ -1,14 +1,14 @@
 # Geometry source comparison: QM9 and QM8
 
 This directory releases the scientific code for eight QM9 and twelve QM8
-geometry comparisons. It is separate from both the original modality ablations
+geometry comparisons. It is separate from both the modality ablations
 and six-fusion comparisons. Each property has six training runs: DFT and MMFF
 coordinates, each with seeds 42, 2025, and 3407. A/B/C use the **same selected
 DFT checkpoint** per seed; D is trained independently with MMFF coordinates.
 
 | Configuration | Training coordinates | Test coordinates |
 |---|---|---|
-| A (historical label A_prime) | DFT | DFT |
+| A (code label A_prime) | DFT | DFT |
 | B (B_prime) | DFT | ETKDGv3 without subsequent force-field optimization |
 | C (C_prime) | DFT | ETKDGv3 + MMFF94 |
 | D | ETKDGv3 + MMFF94 | ETKDGv3 + MMFF94 |
@@ -27,9 +27,9 @@ First construct or obtain the **original audited DFT cache** described in
 It must contain `cache.npz`, `metadata.json`, and `manifest.csv`. QM9 also
 requires the original individual XYZ files. QM8 requires the author-provided
 multi-record `XYZ_B3LYP_631G2dfp.xyz`, with the exact verified record mapping.
-The historical original and matched split-ID JSON files are included here.
+The source and common-cohort split-ID JSON files are included here.
 Large caches, raw data, generated coordinates, predictions and weights are
-not committed. In particular, the historical QM8 audit inputs described in
+not committed. In particular, the QM8 audit inputs described in
 the fusion documentation are required; this repository alone does not supply
 missing dataset records or reconstruct an unknown mapping.
 
@@ -47,9 +47,9 @@ new. The source checks verify XYZ identity, elemental composition, cached
 graphs and point features; QM9 also checks SMILES tokens. The generated
 `data/` directory contains paired DFT/MMFF caches, filtered fixed splits,
 `etkdg_test.npz`, and QM9 identity categories. Full coordinates and failure
-records remain outside `data/` for the historical B evaluation. This command
-is a portable replacement for the original staged local orchestration; the
-per-molecule numerical generation functions are extracted unchanged.
+records remain outside `data/` for configuration B evaluation. This portable
+command uses the per-molecule numerical generation functions unchanged from
+the experiment source.
 
 One ETKDGv3 conformer is attempted per molecule with one thread,
 `maxIterations=1000`, and chirality enforcement. The deterministic seed is
@@ -69,14 +69,15 @@ test counts 105992/13251/13243. The original fixed random split is filtered;
 it is **not** a structural-group split, and the official QM9 geometry-exclusion
 list was not applied. QM8 retains 21689 of the 21747 audited source records,
 with counts 17356/2164/2169 and the original structural groups preserved.
-The 39 earlier QM8 omissions precede this geometry comparison. All properties
-reuse the same generated coordinates and successful cohort. If regeneration
+The 39 records absent from the prepared QM8 source input are distinct from
+geometry-generation exclusions. All properties reuse the same generated
+coordinates and successful cohort. If regeneration
 changes the success set, preparation stops rather than silently changing the
 published cohort. RDKit version/platform differences must then be investigated.
 
 ## Prepare a property, train, and evaluate
 
-The archived scientific files are materialized into an empty directory before
+The experiment source files are materialized into an empty directory before
 running. This keeps the shared model byte-identical while allowing each
 property's original target-specific loader and trainer to remain intact.
 The common model is stored once in `fusion/Model.py`.
@@ -97,10 +98,10 @@ hashes are recorded separately from the original archive. Do not mutate
 linked caches. `train` runs the bounded original queue and finalizes all six
 models only after all six trainings finish. It does not connect to a server,
 rent resources or shut down a machine. The queue resumes its own valid
-checkpoints; never mix historical and new-release run directories.
+checkpoints; keep source-archive and portable-run directories separate.
 
-The historical mu and E1-CC2 queues allow at most four concurrent runs;
-later queues allow six. Defaults retain those limits. `--concurrency` may
+The QM9 mu and QM8 E1-CC2 queues allow at most four concurrent runs;
+the other property queues allow six. `--concurrency` may
 reduce concurrency for smaller hardware without changing batch size. Keep
 FP32, batch 128, AdamW 2e-4, weight decay 1e-4, gradient clipping 0.5,
 200-epoch maximum, 50-epoch minimum, patience 30, and train-only target
@@ -108,21 +109,20 @@ standardization. A and D use the same prescribed settings without D-specific
 retuning. Validation MAE selects each best checkpoint. A cumulative 420-minute
 limit applies per run; a time-limit failure is not a completed experiment.
 
-The **historical complete mu and E1-CC2 ABCD tables were CPU reevaluations**
-after B was added. Their released workflow preserves the earlier CUDA
-cross-inference prerequisite, then runs the archived CPU A/B/C/D evaluation:
+The **reported complete QM9 mu and QM8 E1-CC2 A/B/C/D tables use CPU
+evaluation**. Their workflows execute a CUDA cross-inference prerequisite
+before the CPU A/B/C/D evaluation:
 
 ```sh
 python geometry/run.py evaluate --experiment qm9_mu --work-dir /results/qm9_mu --coordinates /data/qm9_generated
 python geometry/run.py evaluate --experiment qm8_e1cc2 --work-dir /results/qm8_e1cc2 --coordinates /data/qm8_generated
 ```
 
-Thus these two commands still require CUDA for the prerequisite. The other
+These two commands therefore require CUDA for the prerequisite. The other
 18 properties evaluate all four conditions on `cuda:0`. CPU-only diagnostic
 checks are available below, but do not reproduce the formal CUDA evaluation.
-The historical and newer result tables should not be described as sharing
-exactly the same evaluation backend. Re-running an existing evaluation refuses
-to overwrite the committed output. Read `results/comparison.json` for
+The result tables therefore do not all share the same evaluation backend.
+Re-running an existing evaluation refuses to overwrite the committed output. Read `results/comparison.json` for
 per-seed MAE/RMSE, means, and sample SD; three seeds alone do not establish
 statistical significance. Paired per-seed percentage changes and a percentage
 computed from aggregate mean errors are distinct summaries.
@@ -159,8 +159,8 @@ files are stored once and copied to their expected runtime names. The three
 mu/alpha/E1-CC2 source directories come from local completed-runtime backups;
 the other 17 source directories are local deployment/preparation snapshots.
 Their registry/manifest excerpts say so explicitly: a preparation manifest
-alone is not proof that every byte equals a final remote runtime. Historical
-`prepared` fields describe when a protocol was frozen, not current experiment
+alone is not proof that every byte equals a final remote runtime.
+`prepared` fields describe protocol-freezing status, not experiment
 completion. Server orchestration, SSH credentials, shutdown scripts, and
 machine management are excluded.
 

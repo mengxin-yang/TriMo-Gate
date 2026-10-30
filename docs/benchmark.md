@@ -1,17 +1,16 @@
 # Principal benchmark, modality ablations, and CMCR diagnostics
 
-This directory is a portable adaptation of the supplied original implementation.
-It contains the principal fixed-hyperparameter regression loop, all seven
+This directory contains the principal fixed-hyperparameter regression loop, all seven
 nonempty combinations of SMILES (S), graphs (G), and point clouds (P), and the
 three-branch CMCR training loop with gate and alignment exports. It is distinct
-from the later controlled fusion and geometry experiments elsewhere in this
-repository. The six fusion choices now available on this benchmark backbone
-use its own protocol; the archived controlled experiments use different seeds
+from the controlled fusion and geometry experiments elsewhere in this
+repository. The six fusion choices on this benchmark backbone
+use its own protocol; the controlled fusion experiments use different seeds
 and selection protocols.
 
-## Revised manuscript scope
+## Manuscript scope
 
-The principal Section 4.1 tables remain historical random-split comparisons, including literature-reported external baselines. The added scaffold evaluation is a separate supplement (SI Section 5 / Table S6), documented in the [scaffold guide](scaffold.md); the commands in this benchmark guide do not switch to scaffold splits.
+The principal Section 4.1 tables report random-split comparisons, including literature-reported external baselines. Scaffold evaluation is documented in SI Section 5 / Table S6 and the [scaffold guide](scaffold.md); it uses a separate protocol and entry point from the commands in this benchmark guide.
 
 ## Installation
 
@@ -26,9 +25,9 @@ python -B benchmark/test_release.py
 python -B benchmark/test_fusion.py
 ```
 
-The requirements file is a dependency declaration, not an assertion that the
-historical benchmark was run in one reconstructed environment. Local release
-validation and its limits are recorded in `benchmark/validation.json`.
+The requirements file declares compatible dependencies; it does not lock the
+complete execution environment of every reported run. Local validation and its
+limits are recorded in `benchmark/validation.json`.
 
 ## Inputs and alignment
 
@@ -70,8 +69,8 @@ and atom-composition disagreements fail immediately. No loader silently removes
 a record. XYZ atom compositions (including H) are checked against the mapped
 SMILES. This does not reconstruct bonding from coordinates or prove that two
 same-formula isomers are identical: correct dataset identifiers in the map
-remain required. The release cannot recover the historical QM8 exclusion/XYZ
-preparation step from the source loaders alone; use the documented prepared
+remain required. Exact QM8 exclusion/XYZ preparation cannot be reconstructed
+from the source loaders alone; use the documented prepared
 input and preserve its IDs rather than silently filtering an official download.
 
 The same table feeds graph, SMILES, target, and coordinate loading. Graph
@@ -80,8 +79,8 @@ vocabularies, atom-wise SMILES tokenization, padding, and point-feature
 construction are retained from the supplied code. The full benchmark contains
 C/F/H/N/O, giving nine point features: centered xyz, radial distance from the
 centroid, and five atom-type indicators. Coordinates are expected in angstrom.
-Vocabulary construction uses the complete supplied dataset as in the original
-implementation; this has not been silently changed to train-only construction.
+Vocabulary construction uses the complete supplied dataset, not only the
+training partition.
 
 ## Commands
 
@@ -101,7 +100,7 @@ to the interaction-augmented feature-level gate (`--fusion gate`). Single-branch
 commands reject non-default fusion choices because no fusion is performed.
 
 Add `--cmcr` to a full `S G P` command to train with CMCR and export per-molecule
-and per-channel gates, embeddings, and alignment statistics. The historical
+and per-channel gates, embeddings, and alignment statistics. The diagnostic
 export code assumes all three branches and the interaction-augmented gate; this
 entry point requires `--fusion gate` and rejects partial-branch CMCR. Use a
 different output parent for another target. Existing nonempty run directories
@@ -136,18 +135,17 @@ python -B benchmark/run.py --dataset qm9 --table data/qm9.csv --smiles-column sm
 Non-default fusion choices add `_fusion_<kind>` before `_Results` in
 run-directory names; `gate` retains the existing names. Each run's
 `run_config.json` records `fusion`.
-The benchmark encoders retain their original arithmetic, including SMILES CNN
-kernels `[1, 2, 3, 4, 5]`. The archived `fusion/Model.py` uses six CNN kernels and
-is a separate model snapshot. These new benchmark options do not reproduce the
-archived QM9 mu or QM8 E1-CC2 six-fusion runs described in the [fusion guide](fusion.md).
+The benchmark encoders use SMILES CNN kernels `[1, 2, 3, 4, 5]`.
+The separate `fusion/Model.py` uses six CNN kernels. The benchmark fusion options
+follow the benchmark protocol and are not interchangeable with the controlled
+QM9 mu or QM8 E1-CC2 experiments described in the [fusion guide](fusion.md).
 
-Existing benchmark gate checkpoints retain the same parameter names, shapes,
-and evaluation arithmetic. The new module initializes its layers in a different
-order, so starting from the same random seed does not reproduce the previous
-model's initial weights; checkpoint compatibility does not imply identical
-training trajectories.
+The six-fusion module and gate-only benchmark source use compatible parameter
+names, shapes and evaluation arithmetic for gate checkpoints. Their layer
+initialization order differs, so equal seeds do not guarantee equal initial
+weights or training trajectories across the two implementations.
 
-## Retained fixed protocol
+## Fixed protocol
 
 - Seeds 42, 44, 46; independently seeded random 80/10/10 splits, with sorted row
   indices within each split. No structural grouping is introduced here.
@@ -157,16 +155,15 @@ training trajectories.
   loss on standardized targets, gradient norm clipping at 0.5.
 - ReduceLROnPlateau factor 0.5/patience 8; at most 200 epochs; early-stopping
   patience 10/min_delta 1e-4. The lowest validation L1 checkpoint is evaluated.
-  The later geometry protocol's minimum 50 epochs/patience 30 is not used here.
+  The geometry protocol's minimum 50 epochs/patience 30 is not used here.
 - CMCR weight 0.03, temperature 0.2, projection width 64. Supervised validation
   loss selects the checkpoint. In-batch training contrastive loss and global
   test retrieval are different procedures.
 
-The original nondeterministic cuDNN settings are retained. Exact numerical
-agreement across hardware/library versions is not promised. Original scripts
-retain their aggregate metric/export conventions; downstream reports should
-calculate explicitly stated sample SD from the per-seed rows rather than assume
-that every historical summary used the same SD convention.
+The scripts use nondeterministic cuDNN settings. Exact numerical agreement
+across hardware/library versions is not promised. Aggregate metric/export
+conventions differ between scripts; calculate explicitly stated sample SD from
+the per-seed rows rather than assume every summary uses the same convention.
 
 ## CMCR diagnostic definitions
 
@@ -180,9 +177,9 @@ are treated as different records without additional chemical-identity filtering.
 
 Top-1 retrieval ranks against the complete test embedding pool in each direction.
 Only queries are chunked (1024); the key pool is never limited to the minibatch.
-`numpy.argmax` selects the first position in an exact tie. Historical full input
-runs exported 13,389 QM9 and 2,176 QM8 test records per seed. New runs use the pool
-size of their actual supplied population; these numbers are not hard-coded.
+`numpy.argmax` selects the first position in an exact tie. The reported full-input
+runs contain 13,389 QM9 and 2,176 QM8 test records per seed. The pool size is
+determined by the supplied population; these numbers are not hard-coded.
 
 ## Optional Bayesian optimization and provenance limits
 
@@ -190,31 +187,31 @@ size of their actual supplied population; these numbers are not hard-coded.
 trials per seed followed by retraining of the selected configuration. It is
 mutually exclusive with `--cmcr`. Its search space remains in that source file.
 `--fusion` also selects the fusion method for this optional BO run; this is not
-the archived six-fusion experiment protocol.
+the controlled six-fusion experiment protocol.
 This is an available implementation, not evidence that Bayesian optimization
-produced the historical tables. The fixed scripts above do not run BO. Historical
-trial records and selected settings must be reconciled with any manuscript claim
-of per-seed optimization before claiming exact table reproduction. No new full
-benchmark or BO study was run while packaging this release.
+produced the reported tables. The fixed scripts above do not run BO. Exact
+reproduction of a Bayesian-optimization result requires its trial records and
+selected settings; these records are not supplied here.
 
-`benchmark/source_provenance.json` records original file hashes using relative
-source names. Changes in this release are limited to:
+`benchmark/source_provenance.json` records source-file hashes using relative
+names and identifies portability differences. The distributed interface provides:
 
 1. One CLI configuration for dataset/table/target/XYZ mapping/output/modalities/fusion.
-2. Replacing inconsistent embedded dataset paths and silent coordinate skipping
-   with shared row alignment and fail-fast input checks.
-3. Replacing the benchmark model with the supplied six-fusion `Model.py`, while
-   retaining `gate` as the published benchmark default. The historical supplied
-   `Model_1.py` snapshot had `ConcatFusion` active despite containing the gate.
-   Gate equations and encoder arithmetic are retained. This adaptation is not
-   proof of which historical model snapshot produced every result.
-4. Reading modality flags explicitly, instead of guessing them from output
-   directory names (which could misread the BO suffix).
+2. Explicit dataset paths, shared row alignment and fail-fast input checks.
+3. Six fusion choices in `Model.py`, with `gate` as the benchmark default.
+4. Explicit modality flags, independent of output-directory names.
 
-The non-CMCR historical script retains best weights in memory but does not export
+The supplied `Model_1.py` source snapshot selects `ConcatFusion`, whereas the
+benchmark entry point defaults to `gate`. Source availability and checkpoint
+compatibility alone do not establish which snapshot generated every reported
+table entry. Match source snapshots to their result records using the provenance
+information.
+
+The non-CMCR script retains best weights in memory but does not export
 model checkpoints; it exports split membership, per-seed metrics, predictions,
 training histories, and plots. CMCR also exports diagnostic arrays and tables.
-The repository does not fabricate historical weights, BO logs, or split records.
+Weights, BO logs and split records are not provided unless explicitly included
+in the corresponding experiment collection.
 
 No upstream license or third-party source declaration was found in the supplied
 original code directory. This is a provenance limitation, not a declaration that

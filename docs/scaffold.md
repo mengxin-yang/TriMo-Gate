@@ -1,15 +1,15 @@
 # Supplementary scaffold-based evaluation
 
-This collection documents the additional TriMo evaluation referenced in
-Sections 3.2 and 4.1 of the revised manuscript, with methods in SI Section 5
+This collection documents the TriMo scaffold evaluation referenced in
+Sections 3.2 and 4.1 of the manuscript, with methods in SI Section 5
 and the random/scaffold comparison in Table S6. It contains 60 completed
 single-target fits: eight QM9 properties and twelve QM8 tasks, each evaluated
 on three frozen scaffold partitions. The model uses all three modalities and
 the interaction-augmented gate, with CMCR disabled.
 
-The principal manuscript tables still contain historical random-split results
+The principal manuscript tables contain random-split results
 and literature-reported baselines. The supplementary scaffold study, the
-historical benchmark, the controlled fusion runs, and the geometry A/B/C/D
+random-split benchmark, the controlled fusion runs, and the geometry A/B/C/D
 experiments are separate protocols. Their scores are not interchangeable.
 
 ## Published contents
@@ -19,10 +19,10 @@ experiments are separate protocols. Their scores are not interchangeable.
   provenance records. No scheduler, SSH or deployment scripts are included.
 - `scaffold/protocol.json`: concise machine-readable protocol description.
 - `scaffold/summaries/`: 60 per-split final-test metrics, 20 property summaries,
-  historical random-split MAEs, sample SDs and source hashes. See the
+  random-split MAEs, sample SDs and source hashes. See the
   [compact comparison table](../scaffold/summaries/README.md).
-- `scaffold/publication_manifest.json`: original and published file hashes,
-  including the four limited publication adaptations described below.
+- `scaffold/publication_manifest.json`: experiment-source and distributed-file
+  hashes, with metadata differences identified for source verification.
 
 Required audited feature caches, metadata and input manifests are **external**.
 This release includes exact molecule partitions, but it is not a self-contained
@@ -39,7 +39,7 @@ presence does not mean the omitted artifacts are included.
 | QM8 | 21,747 | 17,397 | 2,174 | 2,176 |
 
 QM9 starts from the 133,885-record cache and excludes the 3,054 officially
-uncharacterized records through the audited ID mapping. QM8 uses the existing
+uncharacterized records through the audited ID mapping. QM8 uses the
 21,747-record population with its original, nonconsecutive molecule IDs and
 raw-input SMILES. Do not substitute row positions for IDs, replace the SMILES
 serialization, or silently remove records. These populations differ from the
@@ -72,7 +72,7 @@ The reported sample SD (`ddof=1`) therefore measures variation across three
 scaffold partitions, not repeated training seeds on one fixed partition.
 Three partitions alone do not establish statistical significance.
 
-The historical split builders depend on workspace-specific prepared caches,
+The split builders depend on workspace-specific prepared caches,
 official ID mappings and identity-audit inputs. They are not distributed here
 as a purported portable reconstruction command. The frozen split files and
 their hashes allow direct reuse of the actual partitions without guessing
@@ -98,7 +98,7 @@ frozen model is separate from the six-kernel controlled-fusion snapshot.
 - The separate final evaluator checks selection, source/data/partition hashes
   and the selected checkpoint before constructing the test loader. Test
   outcomes do not select hyperparameters, seed, checkpoint or stopping time.
-  The unchanged NPZ loader can decode full arrays internally; only the
+  The NPZ loader can decode full arrays internally; only the
   designated partition is forwarded and scored at each stage.
 
 HOMO, gap, ZPVE and QM8 excitation energies remain in **hartree**; QM8 oscillator
@@ -114,7 +114,7 @@ These compiled builds must match; `environments/scaffold-requirements.txt`
 records them but is not a portable lockfile or a default-PyPI-only installer.
 Install the matching CUDA/PyG wheels from their official distributions first.
 Exact checkpoint runtime fields are checked during evaluation; dependency
-versions absent from those fields are not retroactively inferred from weights.
+versions absent from those fields cannot be inferred from weights.
 
 ## Reusing the frozen TriMo code
 
@@ -140,7 +140,7 @@ python -B scaffold/trimo/release/runners/trimo/trial.py --cache data/qm9_cache -
 ```
 
 Only after this fit has completed, evaluate its selected checkpoint using the
-**published** plan hash (the historical plan hash is different):
+plan hash for the distributed files:
 
 ```sh
 python -B scaffold/trimo/evaluate.py --plan scaffold/trimo/plan.json --plan-sha256 e842a7640b6f3b62c11502fdc84e4c1e4c5e4618e1ee699144f99c0caeb0e50a --run-id qm9__dipole_moment__split_42 --cache-dir data/qm9_cache --run-dir results/scaffold_qm9_mu/train --out results/scaffold_qm9_mu/evaluation --device cuda:0
@@ -151,14 +151,14 @@ All other run IDs and paths are explicitly listed in the plan. The evaluator
 requires the runtime bound to the training checkpoint. Only load trusted
 checkpoints; PyTorch checkpoint deserialization may execute code.
 
-## Historical random comparison and publication adaptations
+## Random-split comparison
 
-Historical random runs use seeds 42, 44 and 46, changing both the random split
-and training RNG. Their QM9 population is 133,885, whereas the new scaffold
+The random-split runs use seeds 42, 44 and 46, changing both the random split
+and training RNG. Their QM9 population is 133,885, whereas the scaffold
 study uses 130,831. QM8 population counts agree, but equal counts alone do not
-prove identical historical molecule membership. Training/selection settings
-also differ, and the historical BO search logs have not been independently
-recovered. Therefore the comparison reports a change between two experimental
+prove identical molecule membership. Training/selection settings
+also differ, and independently verified BO search logs are not available for
+the random-split results. Therefore the comparison reports a difference between two experimental
 protocols, not the isolated causal effect of scaffold splitting or an
 equal-budget HPO comparison.
 
@@ -166,36 +166,36 @@ The observed scaffold MAEs increase on all twelve QM8 tasks (25.3–74.9%) and
 on three QM9 targets; five QM9 targets have lower MAEs. These are descriptive
 observations, not universal generalization claims or significance tests.
 
-The original `frozen_sources.json` contained two private absolute source paths.
-The publication copy replaces them with relative source names and updates the
-dependent expected metadata hash in `evaluate.py`, the provenance entry, and
-the plan's provenance hash. Those four files are marked as adapted. All model,
-data-loader, training/checkpoint, target-binding, config and split bytes are
-unchanged. The original and public SHA256 values are listed in
-`scaffold/publication_manifest.json`. Historical numerical summaries retain
-the original plan and evaluator hashes; they are not results regenerated with
-the public adapter. The repository's `* -text` Git attribute preserves these
-recorded bytes across operating systems.
+## Source integrity
 
-Some unchanged internal identifiers still say `pilot`, `official_candidate`,
-`DRAFT`, or `PREPARED_FIXED_RECIPE_NO_FITS_EXECUTED`. They describe the original
-preparation snapshot and are preserved for provenance. The separately verified
-final receipts establish completion of the 60 scientific fits. Similarly, the
-old pilot QM9 candidate hash is historical; current split authority is
-`release/runners/trimo/protocol_bindings.json` and the frozen plan.
+`scaffold/publication_manifest.json` maps experiment-source SHA256 values to
+distributed-file SHA256 values. Four files differ only in private-path removal
+and dependent metadata hashes: `frozen_sources.json`, `evaluate.py`, the
+provenance entry, and the plan. Model, data-loader, training/checkpoint,
+target-binding, config and split files match the experiment sources byte for
+byte. Numerical summaries retain the plan and evaluator hashes from their
+actual execution; they do not assert that the distributed metadata was used
+for those fits. The repository's `* -text` Git attribute preserves the recorded
+bytes across operating systems.
 
-## Separate follow-up baselines
+Internal directory names and preparation-status fields are provenance
+identifiers, not completion indicators. Final-test receipts establish completion
+of the 60 fits. The authoritative partitions are bound by
+`release/runners/trimo/protocol_bindings.json` and the frozen plan; the pilot
+candidate metadata does not define the evaluation partitions.
 
-The last audited completion snapshot (2026-10-24, Beijing time) records:
+## Baseline coverage
 
-| Follow-up | Completed scope | Public result coverage in this update |
+The distributed scaffold metrics cover TriMo. Separate baseline experiment
+records have the following scope:
+
+| Model | Completed scope | Public result coverage |
 | --- | --- | --- |
-| KRR on QM8 | Twelve targets on three frozen splits, 36 final metrics | Completion status only; numerical receipts were audited locally |
-| AttentiveFP on QM9 | Eight targets on three frozen splits, 24 final tests | Completion status only; detailed metric receipts were not yet collected into this release |
+| KRR on QM8 | Twelve targets on three frozen splits, 36 final metrics | Numerical receipts verified; metrics not distributed in this package |
+| AttentiveFP on QM9 | Eight targets on three frozen splits, 24 final tests | Completion verified; detailed metric receipts not distributed in this package |
 
-These follow-ups are not substituted for the literature-baseline values in
-the supplied manuscript's principal tables, and their runners are not part of
+These experiments are not substituted for the literature-baseline values in
+the manuscript's principal tables, and their runners are not part of
 this TriMo scaffold source package. GC/DTNN, MPNN and PointGAT are not reported
 as completed formal comparisons; PaiNN compatibility checks are not formal
-accuracy results. No new training or GPU allocation was performed for this
-publication update.
+accuracy results.
