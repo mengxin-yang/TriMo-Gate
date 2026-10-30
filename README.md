@@ -6,8 +6,6 @@ Research code accompanying **More Is Not Always Better: Property-Dependent Multi
 
 State Key Laboratory of Synergistic Chem-Bio Synthesis, School of Chemistry and Chemical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China. Corresponding author: Haichao Wu ([haichao.wu@sjtu.edu.cn](mailto:haichao.wu@sjtu.edu.cn)).
 
-The model remains **TriMo-Gate**. The current repository is [https://github.com/mengxin-yang/TriMo-Gate](https://github.com/mengxin-yang/TriMo-Gate).
-
 TriMo-Gate combines SMILES, molecular graph, and molecular point-cloud representations for property prediction. This repository collects the relevant QM9 and QM8 implementations, fusion comparisons, cross-modal contrastive regularization (CMCR), geometry-quality experiments, and supplementary scaffold-based evaluation. The study examines how useful input representations and geometry fidelity vary by target property; adding modalities does not imply a universal accuracy improvement. It excludes unrelated classification projects, cloud administration scripts, private credentials, datasets, and trained weights.
 
 ## Choose the appropriate experiment
